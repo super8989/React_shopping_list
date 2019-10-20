@@ -10,6 +10,13 @@ class ShoppingList extends Component {
 				{ name: "Bread", qty: "2 loaves" }
 			]
 		};
+		this.addItem = this.addItem.bind(this);
+	}
+
+	addItem(item) {
+		this.setState(state => ({
+			items: [...state.items, item]
+		}));
 	}
 
 	renderItems() {
@@ -29,7 +36,7 @@ class ShoppingList extends Component {
 			<div>
 				<h1>Shopping List</h1>
 				{this.renderItems()}
-				<ShoppingListForm />
+				<ShoppingListForm addItem={this.addItem} />
 			</div>
 		);
 	}
