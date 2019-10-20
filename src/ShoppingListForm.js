@@ -1,8 +1,23 @@
 import React, { Component } from "react";
 
 class ShoppingListForm extends Component {
+	constructor(props) {
+		super(props);
+		this.state = { name: "", qty: "" };
+	}
+
 	render() {
-		return <div>Shopping List Form...</div>;
+		return (
+			<form>
+				<label>Name: </label>
+				<input
+					id='name'
+					name='name'
+					value={this.state.name}
+					onChange={this.handleChange}
+				/>
+			</form>
+		);
 	}
 }
 
