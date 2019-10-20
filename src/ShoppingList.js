@@ -1,5 +1,5 @@
 import React, { Component } from "react";
-import { unlink } from "fs";
+import ShoppingListForm from "./ShoppingListForm";
 
 class ShoppingList extends Component {
 	constructor(props) {
@@ -29,6 +29,7 @@ class ShoppingList extends Component {
 			<div>
 				<h1>Shopping List</h1>
 				{this.renderItems()}
+				<ShoppingListForm />
 			</div>
 		);
 	}
